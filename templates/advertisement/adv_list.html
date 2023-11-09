@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load advertisement_tags %}
+
+
+{% block title %}  Adv List Page {%  endblock %}
+
+
+
+{% block content %}
+    <div>
+        <form method="GET">
+            <label for="city">شهر:</label>
+            <select name="city" id="city">
+                <option>all</option>
+                {% for city in cities %}
+                    <option>{{city}}</option>
+                {% endfor %}
+            </select>
+
+            <br><br>
+
+            <label for="min_price">کمترین قیمت:</label>
+            <input type="number" name="min_price" id="min_price">
+
+            <br><br>
+
+            <label for="max_price">بیشترین قیمت:</label>
+            <input type="number" name="max_price" id="max_price">
+
+            <br><br>
+
+            <button type="submit">اعمال فیلتر</button>
+        </form>
+    </div>
+
+
+{% for adv in advertisement %}
+    <a href="{% url 'adv-detail' adv.upc %}"> {{adv.title}}</a>
+
+
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} <h3> detail page</h3>  {% endblock %}
+
+
+{% block content %}
+
+
+    <h2>Title :  {{ advertisement.title }}</h2>
+    <p><strong>Price:</strong> {{ advertisement.price }}</p>
+    <p><strong>Description:</strong> {{ advertisement.description }}</p>
+    <p><strong>City:</strong> {{ advertisement.city }}</p>
+    <p><strong>Category:</strong> {{ advertisement.category }}</p>
+    {% for img in advertisement.images.all %}
+    <div style="max-width: 100%; height: auto;">
+        <img src="{{img.image.url}}" style="max-width: 100%; height: auto; max-height: 300px;" />
+    </div>/>
+    {% endfor %}
+
+
+{% endblock %}
