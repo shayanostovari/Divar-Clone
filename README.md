@@ -1,4 +1,4 @@
-# Divar
+# Divar App
 
 This Is The [Divar](https://divar.ir/) Clone Project Developed By Django Framework
 
