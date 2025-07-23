@@ -1,6 +1,6 @@
 # Ignore virtual environment
 venv/
-
+#venv
 # Ignore static files collected by Django
 staticfiles/
 
